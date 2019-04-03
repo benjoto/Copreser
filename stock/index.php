@@ -61,7 +61,7 @@ echo "<table style='width:100%'>
   </tr>";
 while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC))
 {
-	if ( strtoupper(substr($row[0],0,1)) == 'V' OR substr($row[0],0,1) == '6' OR substr($row[0],0,1) == '7' OR substr($row[0],0,1) == '9' )
+	if ( strtoupper(substr($row[0],0,1)) == 'V' OR substr($row[0],0,1) == '6' OR substr($row[0],0,1) == '7' OR substr($row[0],0,1) == '9' OR substr($row[0],0,2) == '3-' )
 	{
 		continue;
 	}

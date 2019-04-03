@@ -121,7 +121,7 @@ $num=mysql_numrows($result);
     $connectionInfo = array( "UID"=>$uid, "PWD"=>$pwd, "Database"=>$databaseName);
         
     $conn = sqlsrv_connect( $serverName, $connectionInfo);
-
+//toma todos los datos de los clientes
     $consulta ="SELECT
     COPRESER2014.softland.cwtauxi.NomAux,
     COPRESER2014.softland.cwtauxi.CodAux,
@@ -154,21 +154,23 @@ $num=mysql_numrows($result);
             //cargar combo, y mantener al cliente que se elige
             while($fila = sqlsrv_fetch_array($resultado)){ 
                 $codigoCliente=$fila['CodAux'];                              
-                $valorCombo = $_GET['comboClientes'];
+                $valorCombo = $_GET['comboClientes'];                
+                
                 
                 if($codigoCliente==$valorCombo){
-                    echo "<option value=\"".utf8_encode(strtoupper($codigoCliente."\" selected>".$fila['NomAux']))."</option>\n";
+                    echo "<option name='valueDelCod' value=\"".utf8_encode(strtoupper($codigoCliente."\" selected>".$fila['NomAux']))."</option>\n";
                 }else{
                     echo "<option value=\"".utf8_encode(strtoupper($codigoCliente."\">".$fila['NomAux']))."</option>\n";
                 }  
                 
                 
             };
-            echo "</select>";
+            echo "</select>";            
 
             if (isset($_GET['btnAddProd'])){
+            //si imprimo aca el codigo del cliente me muestra el ultimo cliente de la tabla
+            echo "el boton se esta apretando";             
 
-            echo "el boton se esta apretando";           
         }
             ?>   
                     
@@ -290,6 +292,7 @@ $num=mysql_numrows($result);
     <hr />
 
     <table name="tablaProductosSeleccionados">
+    <h1 style="text-align: center;">Productos Seleccionados</h1>
     <tr>
         <th>codigo</th>
         <th>nombre</th>

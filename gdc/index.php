@@ -117,17 +117,6 @@ echo "
 <tr>
 <td bgcolor=#edebe9><center><font face='helvetica'>Cambio de Contraseña</font></center></td>
 </tr>
-
-
-
-<!--editando desde aca-->
-<tr>
-<td><a href='nota_de_venta.php'><h1>Nota de Venta</h1></a></td>
-</tr>
-<tr>
-<td bgcolor=#edebe9><center><font face='helvetica'>Nota de Venta</font></center></td>
-</tr>
-
 </table>
 ";
 }
